@@ -65,11 +65,10 @@ public class Player : MonoBehaviour
         {
             //only one ball exists so this is fine
             if (!_ballColliders[0].TryGetComponent(out Ball ball)) return;
-            {
-                var calculateKickDirection = CalculateKickDirection(ball.transform);
-                ball.KickBall(calculateKickDirection);
-                OnPlayerKick?.Invoke();
-            }
+
+            var calculateKickDirection = CalculateKickDirection(ball.transform);
+            ball.KickBall(calculateKickDirection);
+            OnPlayerKick?.Invoke();
         }
     }
 
